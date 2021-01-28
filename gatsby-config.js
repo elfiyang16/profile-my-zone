@@ -1,10 +1,41 @@
+/* eslint-disable */
+let contentfulConfig
+
+try {
+  contentfulConfig = require("./.contentful")
+} catch (_) {}
+
+contentfulConfig = {
+  downloadLocal: false,
+  spaceId: contentfulConfig.spaceId,
+  accessToken:
+    contentfulConfig.deliveryAccessToken || contentfulConfig.previewAccessToken,
+  host: process.env.CONTENTFUL_HOST, // default - cdn.contentful.com
+  // environment: config.get("contentfulEnv"),
+}
+
+const { spaceId, accessToken } = contentfulConfig
+
+if (!spaceId || !accessToken) {
+  throw new Error(
+    "Contentful spaceId and the delivery token need to be provided."
+  )
+}
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Typescript Jest Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@denningk`,
+    title: `Elfi Dev Zoo`,
+    description: `To be continued`,
+    author: `@elfi_y`,
   },
   plugins: [
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: spaceId,
+        accessToken: accessToken,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -24,12 +55,9 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/gatsby-icon.png`,
       },
     },
     `gatsby-plugin-typescript`,
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 }
