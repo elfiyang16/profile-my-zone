@@ -1,0 +1,22 @@
+{
+  "extends": "../tsconfig.json",
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": false,
+    "module": "esnext",
+    "resolveJsonModule": true,
+    // https://www.typescriptlang.org/tsconfig#isolatedModules
+    "isolatedModules": true
+  }
+}

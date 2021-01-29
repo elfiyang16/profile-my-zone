@@ -22,6 +22,7 @@ module.exports = {
   },
   plugins: ["@typescript-eslint", "react"],
   parserOptions: {
+    project: "tsconfig.test.json",
     ecmaFeatures: {
       jsx: true,
     },

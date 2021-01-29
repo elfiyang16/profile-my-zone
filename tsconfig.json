@@ -1,12 +1,18 @@
 {
   "compilerOptions": {
+    "esModuleInterop": true,
     "outDir": "./dist/",
     "sourceMap": true,
-    "noImplicitAny": true,
-    "module": "commonjs",
-    "target": "esnext",
+    "module": "esnext",
+    "target": "es6",
     "jsx": "react",
-    "lib": ["dom", "esnext"]
+    "lib": ["dom", "esnext"],
+    "noEmit": true,
+    "noImplicitAny": true,
   },
-  "include": ["./src/**/*"]
+  "include": ["src/**/*"],
+  "exclude": [
+    "src/**/*.spec.ts",
+    "src/**/*.spec.tsx",
+  ],
 }
