@@ -1,0 +1,7 @@
+public/
+jest.config.js
+static/
+jest.setup.ts
+.eslintrc.js
+gatsby.js
+__mocks__/gatsby.js

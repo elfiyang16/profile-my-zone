@@ -1,7 +1,0 @@
-{
-  "extends": "./tsconfig.js",
-  "include": [
-    "**/*.spec.ts",
-    "**/*.spec.tsx",
-  ],
-}

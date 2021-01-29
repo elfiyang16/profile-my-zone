@@ -1,6 +1,5 @@
-// Using .js to allow comments
 module.exports = {
-  parser: "@typescript-eslint/parser", // Specifies the ESLint parser
+  parser: "@typescript-eslint/parser",
   extends: [
     "eslint:recommended",
     "plugin:react/recommended",
@@ -22,7 +21,6 @@ module.exports = {
   },
   plugins: ["@typescript-eslint", "react"],
   parserOptions: {
-    project: "tsconfig.test.json",
     ecmaFeatures: {
       jsx: true,
     },
