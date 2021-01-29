@@ -8,6 +8,7 @@ module.exports = {
     "prettier/@typescript-eslint",
     "plugin:prettier/recommended",
   ],
+  ignorePatterns: ["public/", "jest.config.js", "static/"],
   settings: {
     react: {
       version: "detect",
@@ -28,8 +29,10 @@ module.exports = {
     sourceType: "module", // Allows for the use of imports
   },
   rules: {
-    "react/prop-types": "off", // Disable prop-types as we use TypeScript for type checking
-    "@typescript-eslint/explicit-function-return-type": "off",
+    "react/prop-types": 0,
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "no-nested-ternary": 1,
+    "max-len": [1, { code: 150 }],
   },
   overrides: [
     // Override some TypeScript rules just for .js files
