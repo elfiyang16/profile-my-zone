@@ -7,6 +7,24 @@ const get = require("lodash/get")
 const each = require("lodash/each")
 const path = require("path")
 const slash = require("slash")
+
+exports.onCreateWebpackConfig = ({
+  stage,
+  rules,
+  loaders,
+  plugins,
+  actions,
+}) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        lodash: path.resolve(__dirname, "node_modules/lodash"),
+        gastby: path.resolve(__dirname, "node_modules/gatsby"),
+      },
+    },
+  })
+}
+
 // Implement the Gatsby API “createPages”. This is
 // called after the Gatsby bootstrap is finished so you have
 // access to any information necessary to programmatically
