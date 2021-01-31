@@ -1,6 +1,6 @@
 import  React, {FunctionComponent} from "react"
 import Helmet from "react-helmet"
-import {getSiteMetadata} from "../../helpers/getSiteMetaData"
+// import {getSiteMetadata} from "../../helpers/getSiteMetaData"
 
 export interface IProps {
   title?: string;
@@ -9,6 +9,15 @@ export interface IProps {
   jsonLd?: object; // eslint-disable-line @typescript-eslint/ban-types
   noIndex?: boolean;
 }
+
+
+  const siteMetadata =  {
+    defaultTitle: `Elfi Dev Zone`,
+    defaultDescription: `A little space for me to try something interesting`,
+    author: `@elfi_y`,
+    siteUrl: "https://elfi.com",
+    siteName: "Elfi Dev Zone",
+  };
 
 const SEO :FunctionComponent<IProps> = (props)=> {
   const {
@@ -25,7 +34,8 @@ const SEO :FunctionComponent<IProps> = (props)=> {
     siteUrl,
     siteName,
     author
-  } = getSiteMetadata();
+  } = siteMetadata;
+  //getSiteMetadata();
 
     const seo = {
       description: description || defaultDescription,
