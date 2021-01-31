@@ -24,9 +24,11 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   siteMetadata: {
-    title: `Elfi Dev Zoo`,
-    description: `To be continued`,
+    title: `Elfi Dev Zone`,
+    description: `A little space for me to try something interesting`,
     author: `@elfi_y`,
+    siteUrl: "https://elfi.com",
+    siteName: "Elfi Dev Zone",
   },
   plugins: [
     {
