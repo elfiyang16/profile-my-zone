@@ -1,0 +1,139 @@
+/* Color */
+$elfi-blue: #09488b;
+$elfi-dark-blue: #00060e;
+$elfi-yellow: #fee20d;
+$elfi-orange: #e89603;
+$elfi-dark-orange: #df7304;
+$elfi-light-green: #07dca3;
+$elfi-green: #4e6a0e;
+$elfi-dark-green: #044719;
+$elfi-white: #f5f1e3;
+$elfi-light-choco: #c19f6c;
+$elfi-choco: #4a484f;
+
+/* Typography */
+$f1: 3rem;
+$f2: 2rem;
+$f3: 1.5rem;
+$f4: 1.25rem;
+$f5: 1rem;
+$f6: 0.875rem;
+
+$elfi-line-height: 1.5;
+$elfi-font-weight-bold: 600;
+$elfi-font-weight-normal: 400;
+$elfi-font-weight-light: 300;
+
+@mixin header1 {
+  font-size: $f1;
+  line-height: $elfi-line-height;
+  font-weight: $elfi-font-weight-bold;
+}
+
+@mixin header2 {
+  font-size: $f2;
+  line-height: $elfi-line-height;
+  font-weight: $elfi-font-weight-bold;
+}
+
+@mixin header3 {
+  font-size: $f3;
+  line-height: $elfi-line-height;
+  font-weight: $elfi-font-weight-normal;
+}
+
+@mixin header4 {
+  font-size: $f4;
+  line-height: $elfi-line-height;
+  font-weight: $elfi-font-weight-normal;
+}
+
+@mixin header5 {
+  font-size: $f5;
+  line-height: $elfi-line-height;
+  font-weight: $elfi-font-weight-normal;
+}
+
+@mixin header6 {
+  font-size: $f6;
+  line-height: $elfi-line-height;
+  font-weight: $elfi-font-weight-light;
+}
+
+/* Space */
+$elfi-space-2: 2px;
+$elfi-space-4: 4px;
+$elfi-space-8: 8px;
+$elfi-space-12: 12px;
+$elfi-space-16: 16px;
+$elfi-space-20: 20px;
+$elfi-space-24: 24px;
+$elfi-space-32: 32px;
+$elfi-space-40: 40px;
+
+@mixin space-base {
+  margin: 0;
+  padding: 0;
+  margin-bottom: $elfi-space-24;
+}
+
+/* Pseudo class*/
+@mixin lighten-color($color) {
+  color: rgba($color, 0.8);
+}
+
+@mixin lighten-bg-color($color) {
+  background-color: rgba($color, 0.8);
+}
+
+/* Media query */
+$elfi-screen-small: 480px;
+
+/* Link */
+@mixin link-base {
+  border-bottom-style: solid;
+  border-width: 2px;
+  color: $elfi-dark-blue;
+  cursor: pointer;
+  display: inline;
+  padding: 0 2px 2px;
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    @include lighten-color($elfi-dark-blue);
+  }
+}
+
+@mixin link-light {
+  @include link-base;
+  color: $elfi-white;
+  text-decoration: underline;
+  &:hover,
+  &:focus,
+  &:active {
+    @include lighten-color($elfi-white);
+  }
+}
+
+/* Button */
+
+@mixin button-base {
+  border: 0;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.1s linear 0s;
+  color: $elfi-white;
+  background-color: $elfi-dark-green;
+  box-shadow: 0 0 0 $elfi-green;
+
+  &:hover,
+  &:active,
+  &:focus {
+    box-shadow: 0 3px 0 -1px $elfi-light-green;
+    background-color: $elfi-green;
+  }
+}
