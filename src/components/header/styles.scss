@@ -1,0 +1,108 @@
+@import "../../scss/variable";
+
+.site-header {
+  &__container {
+    background-color: $elfi-green;
+    margin-left: -$elfi-space-40;
+    margin-right: -$elfi-space-40;
+    margin-top: -$elfi-space-40;
+    padding-bottom: $elfi-space-20;
+    font-size: $f4;
+    opacity: 0.5;
+  }
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: $elfi-space-40;
+    margin-right: $elfi-space-40;
+  }
+
+  &__logo {
+    max-width: $elfi-space-40;
+    padding-top: $elfi-space-20;
+    margin-bottom: 0;
+  }
+  &__responsive-menu-bar {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__menu {
+    // width: 90%;
+    display: flex;
+    align-items: center;
+    @media screen and (max-width: $screen-small) {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      bottom: 0;
+      width: 40%;
+      // z-index: 1;
+      background: rgba(0, 0, 0, 0.79);
+      z-index: 999;
+      padding: 80px 0 0;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__menu-item {
+    @include link-light;
+    display: inline-block;
+    padding-left: $elfi-space-12;
+    padding-top: $elfi-space-8;
+  }
+  &__burger-menu {
+    max-width: $elfi-space-32;
+    margin-bottom: 0;
+    display: none;
+    position: relative;
+    top: 8px;
+    @media screen and (max-width: $screen-small) {
+      display: block;
+    }
+  }
+  &__menu-close {
+    display: none;
+    color: $elfi-white;
+    font-size: $f2;
+    position: relative;
+    right: 40px;
+    bottom: 50px;
+    > img {
+      max-width: $elfi-space-32;
+    }
+    @media screen and (max-width: $screen-small) {
+      display: block;
+    }
+  }
+}
+
+.active {
+  .site-header__menu {
+    @media screen and (max-width: $screen-small) {
+      right: 0;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+    }
+  }
+
+  .site-header__burger-menu {
+    max-width: $elfi-space-32;
+    margin-bottom: 0;
+    display: none;
+    position: relative;
+    top: 8px;
+  }
+
+  .site-header__menu-item {
+    text-align: right;
+    width: 120px;
+    padding-bottom: $elfi-space-8;
+    position: relative;
+    bottom: $elfi-space-40;
+  }
+}
