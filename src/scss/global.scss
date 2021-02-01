@@ -12,11 +12,12 @@ html {
 }
 
 body {
-  margin: 0;
+  margin: $elfi-space-40;
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $elfi-dark-blue;
+  cursor: default;
 }
 
 article,
@@ -55,11 +56,6 @@ a {
   -webkit-text-decoration-skip: objects;
 }
 
-abbr[title] {
-  border-bottom: none;
-  text-decoration: underline;
-  text-decoration: underline dotted;
-}
 b,
 strong {
   font-weight: inherit;
@@ -198,19 +194,19 @@ body {
 }
 img {
   max-width: 100%;
-  @include space-base;
+  @include space-with-big-bottom;
 }
 h1 {
   color: inherit;
   text-rendering: optimizeLegibility;
-  @include space-base;
+  @include space-with-big-bottom;
   @include header1;
 }
 
 h2 {
   color: inherit;
   text-rendering: optimizeLegibility;
-  @include space-base;
+  @include space-with-big-bottom;
   @include header2;
 }
 h3 {
@@ -409,7 +405,7 @@ pre tt:before,
 pre tt:after {
   content: "";
 }
-@media only screen and (max-width: $elfi-screen-small) {
+@media only screen and (max-width: $screen-small) {
   html {
     font-size: 100%;
   }
