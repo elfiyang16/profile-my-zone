@@ -1,0 +1,30 @@
+@import "../../scss/variable";
+.article {
+  padding-right: $elfi-space-16;
+  padding-left: $elfi-space-16;
+  margin-right: auto;
+  margin-left: auto;
+
+  &__img-container {
+    text-align: center;
+  }
+
+  &__img {
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
+  }
+
+  &__content {
+    padding-right: $elfi-space-32;
+    padding-left: $elfi-space-32;
+    @media screen and (max-width: $screen-small) {
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    &-date {
+      margin-bottom: $elfi-space-20;
+    }
+  }
+}

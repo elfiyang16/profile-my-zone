@@ -1,24 +1,30 @@
 import React, { FunctionComponent } from "react"
 import { RichText } from "../../components/RichText"
 import { IBlog } from "../../types/IBlog"
+import moment from "moment"
+import "./styles.scss"
 
-
-const Blog: FunctionComponent<IBlog> = ( data ) => {
-  const { author, title, slug, description, body, publishDate, heroImage } = data
+const Blog: FunctionComponent<IBlog> = data => {
+  const { title, body, publishDate, heroImage } = data
 
   return (
-    <div className="article__wrapper">
-      <article className="article">
-        <h1 className="post-title">{title}</h1>
-         <RichText
-          contrastText={false}
-          content={body}
-          stripEmptyParagraphTags
+    <div className="article">
+      <div className="article__img-container">
+        <img
+          className="article__img"
+          src={heroImage.file.url}
+          alt={heroImage.title}
         />
+      </div>
+      <article className="article__content">
+        <h2 className="article__content-title">{title}</h2>
+        <p className="article__content-date">
+          {moment(publishDate).format("LL")}
+        </p>
+        <RichText content={body} />
       </article>
     </div>
   )
 }
-
 
 export default Blog
