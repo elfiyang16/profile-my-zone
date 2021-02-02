@@ -1,10 +1,13 @@
-import * as React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Header from "../header"
 import Footer from "../footer"
 import "../../scss/global.scss"
+import React, { FunctionComponent } from "react"
 
-const Layout = (props: LayoutProps) => (
+interface LayoutProps {
+  children: any
+}
+const Layout: FunctionComponent<LayoutProps> = ({ children }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -19,16 +22,12 @@ const Layout = (props: LayoutProps) => (
       <>
         <Header header={"home"} />
         <div>
-          <main>{props.children}</main>
+          <main>{children}</main>
         </div>
         <Footer />
       </>
     )}
   />
 )
-
-interface LayoutProps {
-  children: any
-}
 
 export default Layout
