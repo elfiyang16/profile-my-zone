@@ -1,0 +1,17 @@
+@import "../../scss/variable";
+
+.site-footer {
+  background-color: $elfi-blue;
+  opacity: 0.5;
+  color: $elfi-white;
+  padding: $elfi-space-20;
+  margin: $elfi-space-40;
+  margin-left: -$elfi-space-40;
+  margin-right: -$elfi-space-40;
+  margin-bottom: -$elfi-space-40;
+
+  > a {
+    text-decoration: none;
+    color: $elfi-white;
+  }
+}
