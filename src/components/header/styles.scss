@@ -29,7 +29,6 @@
     justify-content: space-between;
   }
   &__menu {
-    // width: 90%;
     display: flex;
     align-items: center;
     @media screen and (max-width: $screen-small) {
@@ -38,7 +37,6 @@
       right: -100%;
       bottom: 0;
       width: 40%;
-      // z-index: 1;
       background: rgba(0, 0, 0, 0.79);
       z-index: 999;
       padding: 80px 0 0;
@@ -54,6 +52,12 @@
     display: inline-block;
     padding-left: $elfi-space-12;
     padding-top: $elfi-space-8;
+    &:hover,
+    &:focus,
+    &:active {
+      @include lighten-color($elfi-white);
+      text-decoration: underline;
+    }
   }
   &__burger-menu {
     max-width: $elfi-space-32;
@@ -100,9 +104,9 @@
 
   .site-header__menu-item {
     text-align: right;
-    width: 120px;
     padding-bottom: $elfi-space-8;
-    position: relative;
-    bottom: $elfi-space-40;
+    @media screen and (max-width: $screen-small) {
+      width: 120px;
+    }
   }
 }

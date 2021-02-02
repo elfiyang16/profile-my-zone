@@ -1,0 +1,59 @@
+@import "../scss/variable";
+
+.blogs {
+  margin-top: $elfi-space-40;
+  width: 100%;
+  border-top: 1px solid $elfi-light-choco;
+  &__header {
+    margin-top: $elfi-space-24;
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin: 0px auto;
+  }
+  &__link {
+    text-emphasis: none;
+    text-decoration: none;
+  }
+  &__item {
+    width: 48%;
+    padding: $elfi-space-12;
+    margin-bottom: $elfi-space-24;
+    transition: transform 0.5s ease;
+    border: 1px solid #e9e9e9;
+    &:hover {
+      transform: scale(1.15);
+    }
+    @media screen and (max-width: $screen-small) {
+      width: 100%;
+    }
+    &-text-container {
+      transition: transform 0.5s ease;
+      &:hover {
+        opacity: 0.9;
+        color: rgba($elfi-dark-blue, 0.8);
+      }
+    }
+    &-img-container {
+    }
+    &-img {
+      margin-bottom: 0;
+    }
+    &-header {
+      line-height: 1.25;
+      margin-bottom: $elfi-space-8;
+      margin-top: $elfi-space-8;
+    }
+    &-description {
+      overflow: hidden;
+      height: 3rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      transition: all 0.7s ease 0.1s, max-height 0.7s ease 0s,
+        white-space 0.1s ease 1s;
+    }
+  }
+}

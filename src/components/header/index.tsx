@@ -1,13 +1,35 @@
-import { Link } from "gatsby"
+import { Link, navigate } from "gatsby"
 import React, { useState } from "react"
 import "./styles.scss"
 import dog from "../../images/dog-white.svg"
 import burgermenu from "../../images/menu-white.svg"
 import closeicon from "../../images/close-icon.png"
+import { set } from "lodash"
 
 interface IHeader {
   header: string
 }
+
+interface IMenu {
+  url: string
+  item: string
+  menu: boolean
+  setMenu: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+const CustomLink: React.FC<IMenu> = ({ menu, setMenu, url, item }) => (
+  <Link
+    to={`${url}`}
+    onClick={(e: any) => {
+      e.preventDefault()
+      setMenu(!menu)
+      navigate(url)
+    }}
+    className="site-header__menu-item"
+  >
+    {item}
+  </Link>
+)
 
 const Header: React.FunctionComponent<IHeader> = ({ header }) => {
   const [menu, setMenu] = useState<boolean>(false)
@@ -38,21 +60,28 @@ const Header: React.FunctionComponent<IHeader> = ({ header }) => {
                 <button className="site-header__menu-close">
                   <img src={closeicon} alt="close" />
                 </button>
-                <Link to="/#home" className="site-header__menu-item">
-                  Home
-                </Link>
-                <Link to="/#blogs" className="site-header__menu-item">
-                  Blogs
-                </Link>
-                <Link to="/#about" className="site-header__menu-item">
-                  About me
-                </Link>
+                <CustomLink setMenu={setMenu} menu={menu} url="/" item="Home" />
+                <CustomLink
+                  setMenu={setMenu}
+                  menu={menu}
+                  url="/#blogs"
+                  item="Blogs"
+                />
+                <CustomLink
+                  setMenu={setMenu}
+                  menu={menu}
+                  url="/#about"
+                  item="About me"
+                />
               </div>
             ) : (
               <div className="site-header__menu">
-                <Link to="/#home" className="site-header__menu-item">
-                  Home
-                </Link>
+                <CustomLink
+                  setMenu={setMenu}
+                  menu={menu}
+                  url="/#home"
+                  item="Home"
+                />
               </div>
             )}
           </nav>

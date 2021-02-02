@@ -99,24 +99,12 @@ $screen-small: 480px;
   color: $elfi-dark-blue;
   cursor: pointer;
   display: inline;
-  &:hover,
-  &:focus,
-  &:active {
-    @include lighten-color($elfi-dark-blue);
-    text-decoration: underline;
-  }
 }
 
 @mixin link-light {
   @include link-base;
   color: $elfi-white;
   text-decoration: none;
-  &:hover,
-  &:focus,
-  &:active {
-    @include lighten-color($elfi-white);
-    text-decoration: underline;
-  }
 }
 
 /* Button */
