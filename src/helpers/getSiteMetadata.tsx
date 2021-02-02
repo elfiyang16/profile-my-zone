@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby"
 /* DISABLE COMPONENBT DUE TO https://github.com/gatsbyjs/gatsby/issues/26563 */
 export const getSiteMetadata = () => {
   const { site } = useStaticQuery(graphql`
@@ -13,6 +13,6 @@ export const getSiteMetadata = () => {
         }
       }
     }
-  `);
-  return site.siteMetadata;
-};
+  `)
+  return site.siteMetadata
+}
