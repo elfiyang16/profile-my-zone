@@ -5,8 +5,6 @@ import dog from "../../images/dog-white.svg"
 import burgermenu from "../../images/menu-white.svg"
 import closeicon from "../../images/close-icon.png"
 
-import cn from "classnames"
-
 interface IHeader {
   header: string
 }

@@ -1,0 +1,41 @@
+@import "../../scss/variable";
+
+.hero {
+  width: 100%;
+  height: calc(100vh - 100px);
+  @media screen and (max-width: $screen-small) {
+    height: calc(100vh - 100px);
+  }
+  &__img-wrapper {
+    margin-bottom: 0;
+  }
+  &__img {
+    width: 100%;
+    height: calc(100vh - 220px);
+    object-fit: cover;
+    object-position: center center;
+    margin-bottom: 0;
+    @media screen and (max-width: $screen-small) {
+      height: calc(100vh - 100px);
+      transition-delay: 500ms;
+    }
+  }
+  &__header-wrapper {
+    @media screen and (max-width: $screen-small) {
+      position: absolute;
+      top: 100px;
+    }
+    > h1,
+    h3 {
+      @media screen and (max-width: $screen-small) {
+        width: 200px;
+        overflow-wrap: break-word;
+        color: $elfi-white;
+        margin-left: $elfi-space-24;
+      }
+    }
+  }
+  &__header-primary {
+    margin-bottom: 0;
+  }
+}
