@@ -1,6 +1,6 @@
 import { graphql } from "gatsby"
 
-// import ModuleTemplate from "./ModuleTemplate"
+import ModuleTemplate from "./ModuleTemplate"
 
 export const pageQuery = graphql`
   query($id: String!) {
@@ -68,4 +68,4 @@ export const pageQuery = graphql`
   }
 `
 
-export default ModularTemplate
+export default ModuleTemplate
