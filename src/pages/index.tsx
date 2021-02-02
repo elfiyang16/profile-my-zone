@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Hero from "../components/hero"
 import moment from "moment"
+import { IBlog } from "../types/IBlog"
 import "./styles.scss"
 
 export const query = graphql`
@@ -68,32 +69,34 @@ const IndexPage = ({ data }: any) => {
         <div className="blogs__list">
           {blogs &&
             Array.isArray(blogs) &&
-            blogs.map((blog, i) => (
-              <div className="blogs__item">
-                <Link className="blogs__link" to={`${blog.node.slug}`}>
-                  <div className="blogs__item-img-container">
-                    <img
-                      className="blogs__item-img"
-                      src={blog.node.heroImage.file.url}
-                      alt={blog.node.heroImage.title}
-                    />
-                  </div>
-                  <div className="blogs__item-text-container">
-                    <h3 className="blogs__item-header">{blog.node.title}</h3>
-                    <p className="blogs__item-description">
-                      {blog.node.description.description}
-                    </p>
-                    <p className="blogs__item-date">
-                      {moment(blog.node.publishDate).format("LL")}
-                    </p>
-                  </div>
-                </Link>
-              </div>
-            ))}
+            blogs.map((blog, i) => <PostList {...blog} key={`hp-blog-${i}`} />)}
         </div>
       </section>
     </Layout>
   )
 }
+
+export const PostList = (blog: { node: IBlog }) => (
+  <div className="blogs__item">
+    <Link className="blogs__link" to={`/blog/${blog.node.slug}`}>
+      <div className="blogs__item-img-container">
+        <img
+          className="blogs__item-img"
+          src={blog.node.heroImage.file.url}
+          alt={blog.node.heroImage.title}
+        />
+      </div>
+      <div className="blogs__item-text-container">
+        <h3 className="blogs__item-header">{blog.node.title}</h3>
+        <p className="blogs__item-description">
+          {blog.node.description.description}
+        </p>
+        <p className="blogs__item-date">
+          {moment(blog.node.publishDate).format("LL")}
+        </p>
+      </div>
+    </Link>
+  </div>
+)
 
 export default IndexPage
