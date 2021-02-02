@@ -46,6 +46,14 @@ exports.createPages = async ({ graphql, actions }) => {
             }
           }
         }
+        allContentfulBlogPost(sort: { fields: publishDate, order: DESC }) {
+          edges {
+            node {
+              slug
+              id
+            }
+          }
+        }
       }
     `
   )
@@ -65,6 +73,37 @@ exports.createPages = async ({ graphql, actions }) => {
         component: slash(moduleTemplateIndex),
         context: {
           id: moduleTemplate.node.id,
+        },
+      })
+    }
+  })
+
+  const posts = result.data.allContentfulBlogPost.edges
+  const postsPerPage = 5
+  const numPages = Math.ceil(posts.length / postsPerPage)
+  const blogList = path.resolve("./src/templates/blogsTemplate/index.tsx")
+  const blogWrapper = path.resolve("./src/templates/blogTemplate/index.tsx")
+
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? "/blogs" : `/blogs/page-${i + 1}`,
+      component: blogList,
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage: i + 1,
+      },
+    })
+  })
+
+  each(posts, post => {
+    if (post.node.slug) {
+      createPage({
+        path: `/blog/${post.node.slug}`,
+        component: slash(blogWrapper),
+        context: {
+          id: post.node.id,
         },
       })
     }
