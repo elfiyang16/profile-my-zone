@@ -57,3 +57,34 @@
     }
   }
 }
+
+.about {
+  margin-top: $elfi-space-40;
+  width: 100%;
+  border-top: 1px solid $elfi-light-choco;
+  &__container {
+    display: flex;
+    flex-direction: row;
+    @media screen and (max-width: $screen-small) {
+      flex-direction: column;
+    }
+  }
+  &__header {
+    margin-top: $elfi-space-24;
+  }
+  &__img {
+    border-radius: 50%;
+    width: 200px;
+    @media screen and (max-width: $screen-small) {
+      margin: auto;
+      margin-bottom: $elfi-space-24;
+    }
+  }
+  &__text {
+    margin-left: $elfi-space-24;
+    line-height: 1.5;
+    @media screen and (max-width: $screen-small) {
+      margin-left: 0;
+    }
+  }
+}

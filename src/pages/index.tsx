@@ -6,6 +6,7 @@ import Hero from "../components/hero"
 import moment from "moment"
 import { IBlog } from "../types/IBlog"
 import { StructuredData } from "../components/jsonLd"
+import profile from "../images/profile-me.png"
 import "./styles.scss"
 
 export const query = graphql`
@@ -80,6 +81,22 @@ const IndexPage = ({ data }: any) => {
           {blogs &&
             Array.isArray(blogs) &&
             blogs.map((blog, i) => <PostList {...blog} key={`hp-blog-${i}`} />)}
+        </div>
+      </section>
+      <section className="about" id="about">
+        <h2 className="about__header">About me</h2>
+        <div className="about__container">
+          <img className="about__img" src={profile} />
+          <p className="about__text">
+            &nbsp; &nbsp;Elfi is a Fullstack engineer on JavaScript and Python.
+            She always thought language was her thing and studied German
+            Literature at the uni. But now she works on machine languages. Well,
+            they are all languages.
+            <br />
+            &nbsp; &nbsp;When not coding, She loves to experiment new spices and
+            invent fusion recipes like Thai green curry risotto, spicy Sichuan
+            burger, pesto roasted tofu, etc.
+          </p>
         </div>
       </section>
     </Layout>
