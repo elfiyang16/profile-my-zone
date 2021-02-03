@@ -34,7 +34,8 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-helmet": "^5.2.1",
-    "sass": "^1.32.5"
+    "sass": "^1.32.5",
+    "schema-dts": "^0.8.2"
   },
   "devDependencies": {
     "@types/jest": "^24.9.1",

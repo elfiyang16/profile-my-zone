@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 import Hero from "../components/hero"
 import moment from "moment"
 import { IBlog } from "../types/IBlog"
+import { StructuredData } from "../components/jsonLd"
 import "./styles.scss"
 
 export const query = graphql`
@@ -57,7 +58,16 @@ const IndexPage = ({ data }: any) => {
   const blogs = data.allContentfulBlogPost.edges
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO
+        title="Home"
+        description="Home page"
+        jsonLd={{
+          "@context": "https://schema.org",
+          address: {
+            sameAs: ["https://www.linkedin.com/in/elfiyang/"],
+          },
+        }}
+      />
       <Hero
         heading1={heading1}
         heading2={heading2}
@@ -96,6 +106,7 @@ export const PostList = (blog: { node: IBlog }) => (
         </p>
       </div>
     </Link>
+    <StructuredData post={blog.node} />
   </div>
 )
 

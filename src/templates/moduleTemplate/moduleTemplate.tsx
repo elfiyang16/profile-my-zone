@@ -5,6 +5,7 @@ import SEO from "../../components/seo"
 import Layout from "../../components/layout"
 import { IBlog } from "../../types/IBlog"
 import { IHero } from "../../types/IHero"
+import { JsonLd } from "../../components/jsonLd"
 
 // import "./styles.scss"
 
@@ -82,11 +83,11 @@ export const Main: FunctionComponent<IProps> = ({ data }) => {
 
   return (
     <div className="modular-content_container">
-      {/* {structuredData &&
+      {structuredData &&
         structuredData.internal &&
         structuredData.internal.content && (
           <JsonLd data={JSON.parse(structuredData.internal.content)} />
-        )} */}
+        )}
       {hero && <Hero {...hero} />}
       {Array.isArray(blogs) &&
         blogs.map((m, idx) => {

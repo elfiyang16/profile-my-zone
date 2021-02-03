@@ -5,6 +5,7 @@ import { IBlog } from "../../types/IBlog"
 import Layout from "../../components/layout"
 import Blog from "../../components/blog"
 import "./styles.scss"
+import { BlogPosting } from "schema-dts"
 
 export interface IProps {
   data: {

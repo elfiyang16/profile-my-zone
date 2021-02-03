@@ -1,4 +1,3 @@
-import { IContentfulRichText } from "./IContentfulRichText"
 import { IContentfulImage } from "./IContentfulImage"
 
 export interface IBlog {
@@ -9,7 +8,7 @@ export interface IBlog {
   description?: {
     description: string
   }
-  body: IContentfulRichText
+  body: any
   publishDate?: string
   heroImage?: IContentfulImage
 }
