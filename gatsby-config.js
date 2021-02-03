@@ -1,4 +1,7 @@
 /* eslint-disable */
+const unionBy = require("lodash/unionBy")
+const path = require("path")
+
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}` /* e.g. dev */,
 })
@@ -55,16 +58,64 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Elfi Zone`,
+        short_name: `Elfi Zone`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`,
+        icon: `src/images/oriento-tea.png`,
       },
     },
     `gatsby-plugin-typescript`,
     `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        // Exclude specific pages or groups of pages using glob parameters
+        // See: https://github.com/isaacs/minimatch
+        // The example below will exclude the single `path/to/page` and all routes beginning with `category`
+        query: `
+        {
+          site {
+            siteMetadata {
+              siteUrl
+            }
+          }
+
+          allSitePage {
+            edges {
+              node {
+                path
+              }
+            }
+          }
+          allContentfulModuleTemplate(filter: {doNotIndex: {eq: true}}) {
+            edges {
+              node {
+                path: urlPath
+                doNotIndex
+              }
+            }
+          }
+      }`,
+        serialize: ({ allSitePage, site, allContentfulModuleTemplate }) => {
+          const allSitePageNodes = allSitePage.edges.map(e => e.node)
+          const allContentfulModuleTemplateNodes = allContentfulModuleTemplate.edges.map(
+            e => e.node
+          )
+
+          const indexedPages = unionBy(
+            allContentfulModuleTemplateNodes,
+            allSitePageNodes,
+            "path"
+          ).filter(p => !p.doNotIndex)
+
+          return indexedPages.map(page => ({
+            url: site.siteMetadata.siteUrl + page.path,
+          }))
+        },
+      },
+    },
   ],
 }
