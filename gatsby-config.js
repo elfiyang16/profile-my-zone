@@ -1,4 +1,8 @@
 /* eslint-disable */
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}` /* e.g. dev */,
+})
+
 let contentfulConfig
 
 try {
