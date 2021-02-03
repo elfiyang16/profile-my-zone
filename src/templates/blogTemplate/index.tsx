@@ -5,7 +5,7 @@ import { IBlog } from "../../types/IBlog"
 import Layout from "../../components/layout"
 import Blog from "../../components/blog"
 import "./styles.scss"
-import { BlogPosting } from "schema-dts"
+import SocialSharer from "../../components/socialShare"
 
 export interface IProps {
   data: {
@@ -38,6 +38,7 @@ const BlogWrapper: FunctionComponent<IProps> = ({ data }) => {
         body={body}
         publishDate={publishDate}
       />
+      <SocialSharer blogTitle={title} blogSlug={slug} />
     </Layout>
   )
 }

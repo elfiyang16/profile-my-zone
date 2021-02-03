@@ -1,0 +1,22 @@
+@import "../../scss/variable";
+
+.social-share {
+  color: $elfi-dark-green;
+  max-width: 200px;
+  text-align: left;
+
+  &__wrapper {
+    padding: 8px;
+  }
+
+  &__icon {
+    width: 36px;
+    position: relative;
+    top: 14px;
+    &:hover,
+    &:active,
+    &:focus {
+      transform: translateY(1px);
+    }
+  }
+}
