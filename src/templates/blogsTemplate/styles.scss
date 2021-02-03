@@ -1,0 +1,23 @@
+@import "../../scss/variable";
+
+.blog-list {
+  margin: auto;
+  text-align: center;
+  &__body {
+    text-align: center;
+
+    > div {
+      /*.blogs__item*/
+      margin: 0 auto 40px;
+      width: 60%;
+      @media screen and (max-width: $screen-small) {
+        width: 100%;
+      }
+    }
+  }
+  &__pagination {
+    &:hover {
+      font-weight: 600;
+    }
+  }
+}
