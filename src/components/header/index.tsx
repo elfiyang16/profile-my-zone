@@ -73,6 +73,12 @@ const Header: React.FunctionComponent<IHeader> = ({ header }) => {
                   url="/#about"
                   item="About me"
                 />
+                <CustomLink
+                  setMenu={setMenu}
+                  menu={menu}
+                  url="/#contact"
+                  item="Contact"
+                />
               </div>
             ) : (
               <div className="site-header__menu">
