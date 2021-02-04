@@ -4,9 +4,7 @@
     <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
   </a>
 </p>
-<h1 align="center">
-  Gatsby's Typescript Jest Starter
-</h1>
+<h1 align="center">This is my blog place</h1>
 
 Barebones Gatsby starter with Typescript, Jest, and other useful configurations. A [detailed guide](#deploying-your-gatsby-site-to-an-S3-Bucket) on how to deploy your Gatsby site to AWS S3 buckets (manually and automatically) can be found in this readme.
 

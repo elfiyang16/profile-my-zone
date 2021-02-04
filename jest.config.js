@@ -14,5 +14,6 @@ module.exports = {
   globals: {
     __PATH_PREFIX__: ``,
   },
-  setupFiles: [`<rootDir>/loadershim.js`],
+  setupFiles: [`<rootDir>/jest.setup.ts`],
+  snapshotSerializers: ["enzyme-to-json/serializer"],
 }
