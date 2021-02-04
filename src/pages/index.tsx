@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Hero from "../components/hero"
+import Contact from "../components/contact"
 import moment from "moment"
 import { IBlog } from "../types/IBlog"
 import { StructuredData } from "../components/jsonLd"
@@ -98,6 +99,10 @@ const IndexPage = ({ data }: any) => {
             burger, pesto roasted tofu, etc.
           </p>
         </div>
+      </section>
+      <section className="contact" id="contact">
+        <h2 className="contact__header">Contact</h2>
+        <Contact />
       </section>
     </Layout>
   )

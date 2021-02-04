@@ -1,0 +1,60 @@
+@import "../../scss/variable";
+
+.contact {
+  &__form {
+    display: flex;
+    flex-direction: column;
+    @media screen and (max-width: $screen-small) {
+    }
+  }
+
+  &__text {
+    min-height: 100px;
+    border: 1px solid hsla(0, 0%, 80%, 0.37);
+    &:hover,
+    &:focus,
+    &:active {
+      background: #e3e3f1;
+    }
+  }
+  &__input {
+    width: 100%;
+    padding: $elfi-space-12 $elfi-space-16;
+    outline: none;
+    background: #fafafe;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    border-radius: 4px;
+    border: 1px solid hsla(0, 0%, 80%, 0.37);
+    &:hover,
+    &:focus,
+    &:active {
+      background: #e3e3f1;
+    }
+  }
+  &__label {
+    font-size: $f5;
+    margin-top: $elfi-space-16;
+    margin-bottom: $elfi-space-12;
+  }
+  &__submit {
+    margin-top: $elfi-space-24;
+    background-color: #333;
+    color: $elfi-white;
+    box-shadow: 0 10px 50px rgb(58 58 58 / 26%);
+    padding: $elfi-space-12;
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    border-radius: 4px;
+    border: none;
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: rgb(138, 135, 135);
+    }
+  }
+  &__submit-result {
+    margin-top: $elfi-space-24;
+    font-weight: 600;
+  }
+}
