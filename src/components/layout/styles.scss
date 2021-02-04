@@ -1,0 +1,7 @@
+@import "../../scss/variable";
+main {
+  margin: auto;
+  @media screen and (min-width: $screen-medium) {
+    width: 70%;
+  }
+}

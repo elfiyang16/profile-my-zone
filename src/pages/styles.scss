@@ -100,7 +100,7 @@
   &__container {
     display: flex;
     flex-direction: row;
-    @media screen and (max-width: $screen-small) {
+    @media screen and (max-width: 950px) {
       flex-direction: column;
     }
   }
@@ -110,7 +110,7 @@
   &__img {
     border-radius: 50%;
     width: 200px;
-    @media screen and (max-width: $screen-small) {
+    @media screen and (max-width: 950px) {
       margin: auto;
       margin-bottom: $elfi-space-24;
     }

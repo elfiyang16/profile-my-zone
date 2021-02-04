@@ -3,6 +3,7 @@ import Header from "../header"
 import Footer from "../footer"
 import "../../scss/global.scss"
 import React, { FunctionComponent } from "react"
+import "./styles.scss"
 
 interface LayoutProps {
   children: any
