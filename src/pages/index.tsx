@@ -77,7 +77,12 @@ const IndexPage = ({ data }: any) => {
         image={image}
       />
       <section className="blogs" id="blogs">
-        <h2 className="blogs__header">Blogs</h2>
+        <div className="blogs__header-container">
+          <h2 className="blogs__header">Blogs</h2>
+          <Link to="/blogs" className="blogs__more">
+            <span>read more</span>
+          </Link>
+        </div>
         <div className="blogs__list">
           {blogs &&
             Array.isArray(blogs) &&

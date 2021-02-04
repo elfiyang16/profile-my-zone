@@ -4,8 +4,43 @@
   margin-top: $elfi-space-40;
   width: 100%;
   border-top: 1px solid $elfi-light-choco;
+  &__header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
   &__header {
     margin-top: $elfi-space-24;
+  }
+  &__more {
+    margin-top: $elfi-space-32;
+    font-size: $f4;
+    padding: 8px;
+    width: 150px;
+    transition: all 0.5s;
+    height: 40px;
+
+    > span {
+      display: inline-block;
+      position: relative;
+      transition: all 0.5s;
+    }
+    > span:after {
+      content: "\00bb";
+      position: absolute;
+      top: 0;
+      right: -30px;
+      transition: 0.5s;
+    }
+    &:hover {
+      > span {
+        right: 10px;
+      }
+      > span:after {
+        opacity: 1;
+        right: -20px;
+      }
+    }
   }
   &__list {
     display: flex;
