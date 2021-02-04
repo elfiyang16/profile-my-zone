@@ -6,10 +6,28 @@ import Layout from "../../components/layout"
 import Blog from "../../components/blog"
 import "./styles.scss"
 import SocialSharer from "../../components/socialShare"
-
-export interface IProps {
+import { DiscussionEmbed } from "disqus-react"
+interface IProps {
   data: {
     contentfulBlogPost: IBlog
+  }
+}
+
+interface IDisqus {
+  shortname: string
+  config: {
+    identifier: string /* use slug */
+    title: string
+  }
+}
+
+const disqusConfig: (identifier: string, title: string) => IDisqus = (
+  identifier: string,
+  title: string
+) => {
+  return {
+    shortname: process.env.GATSBY_DISQUS_NAME,
+    config: { identifier, title },
   }
 }
 
@@ -39,6 +57,7 @@ const BlogWrapper: FunctionComponent<IProps> = ({ data }) => {
         publishDate={publishDate}
       />
       <SocialSharer blogTitle={title} blogSlug={slug} />
+      <DiscussionEmbed {...disqusConfig(slug, title)} />
     </Layout>
   )
 }
