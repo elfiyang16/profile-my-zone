@@ -10,11 +10,7 @@
     "noEmit": true,
     "noImplicitAny": true,
     "moduleResolution": "node"
-    // "baseUrl": "./",
-    // "paths" : {
-    //   "src/*": ["./src/*"]
-    // }
   },
   "include": ["src/**/*"],
-  "exclude": ["src/**/*.spec.ts", "src/**/*.spec.tsx"]
+  "exclude": ["src/**/*.spec.ts", "src/**/*.spec.tsx", "lambda/**/*"]
 }

@@ -8,15 +8,11 @@ require("dotenv").config({
 
 let contentfulConfig
 
-try {
-  contentfulConfig = require("./.contentful")
-} catch (_) {}
-
 contentfulConfig = {
   downloadLocal: false,
-  spaceId: contentfulConfig.spaceId,
+  spaceId: process.env.SPACE_ID,
   accessToken:
-    contentfulConfig.deliveryAccessToken || contentfulConfig.previewAccessToken,
+    process.env.DELIVERY_ACCESS_TOKEN || process.env.PREVIEW_ACCESS_TOKEN,
   host: process.env.CONTENTFUL_HOST, // default - cdn.contentful.com
   // environment: config.get("contentfulEnv"),
 }
