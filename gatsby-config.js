@@ -5,6 +5,7 @@ const path = require("path")
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}` /* e.g. dev */,
 })
+console.log(`.env.${process.env.NODE_ENV}`)
 
 let contentfulConfig
 
