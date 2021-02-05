@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react"
-import { RichText } from "../../components/RichText"
+import { RichText } from "../../components/richText"
 import { IBlog } from "../../types/IBlog"
 import moment from "moment"
 import "./styles.scss"
