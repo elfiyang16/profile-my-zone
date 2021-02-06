@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SocialSharer should match the latest snapshot 1`] = `
+<div
+  aria-label="Social sharing button"
+  className="social-share"
+  role="region"
+>
+  <p
+    className="social-share_wrapper"
+  >
+    Share on:
+     
+    <a
+      className="social-share__link"
+      href="https://twitter.com/intent/tweet/?text=mockPost&url=https%3A%2F%2Flocalhost%3A8000%2Fblog%2F%2FmockPost&via=elfi"
+      rel="nofollow"
+      target="_blank"
+      title="Share on Twitter"
+    >
+      <img
+        alt="Twitter"
+        className="social-share__icon"
+        src={Object {}}
+      />
+    </a>
+  </p>
+</div>
+`;

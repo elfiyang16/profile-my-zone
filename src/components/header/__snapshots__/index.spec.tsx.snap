@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> should render 1`] = `
+<header
+  className="site-header "
+>
+  <div
+    className="site-header__container"
+  >
+    <div
+      className="site-header__main"
+    >
+      <div>
+        <mockConstructor
+          to="/"
+        >
+          <img
+            alt="home logo"
+            className="site-header__logo"
+            src={Object {}}
+          />
+        </mockConstructor>
+      </div>
+      <nav
+        className="site-header__responsive-menu-bar"
+        onClick={[Function]}
+        tabIndex={0}
+      >
+        <button>
+          <img
+            alt="menu logo"
+            className="site-header__burger-menu"
+            src={Object {}}
+          />
+        </button>
+        <div
+          className="site-header__menu"
+        >
+          <button
+            className="site-header__menu-close"
+          >
+            <img
+              alt="close"
+              src={Object {}}
+            />
+          </button>
+          <CustomLink
+            item="Home"
+            menu={false}
+            setMenu={[Function]}
+            url="/"
+          />
+          <CustomLink
+            item="Blogs"
+            menu={false}
+            setMenu={[Function]}
+            url="/#blogs"
+          />
+          <CustomLink
+            item="About me"
+            menu={false}
+            setMenu={[Function]}
+            url="/#about"
+          />
+          <CustomLink
+            item="Contact"
+            menu={false}
+            setMenu={[Function]}
+            url="/#contact"
+          />
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+`;

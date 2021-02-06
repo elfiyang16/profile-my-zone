@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Hero /> should render 1`] = `
+<div
+  aria-label="Main hero"
+  className="hero "
+  role="region"
+>
+  <div
+    className="hero__img-wrapper"
+  >
+    <img
+      alt="The example"
+      className="hero__img"
+      src="//images.ctfassets.net/example.png"
+    />
+  </div>
+  <section
+    className="hero__header-wrapper"
+  >
+    <h1
+      className="hero__header-primary"
+    >
+      Some title
+    </h1>
+    <h3
+      className="hero__header-secondary"
+    >
+      Some other title
+    </h3>
+  </section>
+</div>
+`;

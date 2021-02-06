@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main renders correctly 1`] = `
+<div
+  className="modular-content_container"
+>
+  <Hero
+    colorTheme=""
+    heading1="Some title"
+    heading2="Some other title"
+    id="abc"
+    image={
+      Object {
+        "file": Object {
+          "url": "//images.ctfassets.net/example.png",
+        },
+        "title": "The example",
+      }
+    }
+  />
+</div>
+`;

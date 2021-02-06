@@ -11,7 +11,7 @@ const Hero: React.FunctionComponent<IHero> = ({
   image,
 }) => {
   return (
-    <div className={`hero ${colorTheme}`}>
+    <div className={`hero ${colorTheme}`} role="region" aria-label="Main hero">
       {image && (
         <div className="hero__img-wrapper">
           <img src={image.file.url} alt={image.title} className="hero__img" />

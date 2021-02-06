@@ -6,7 +6,7 @@ import burgermenu from "../../images/menu-white.svg"
 import closeicon from "../../images/close-icon.png"
 import { set } from "lodash"
 
-interface IHeader {
+export interface IHeader {
   header: string
 }
 

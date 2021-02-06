@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Blog /> should render 1`] = `
+<div
+  className="article"
+>
+  <div
+    className="article__img-container"
+  >
+    <img
+      alt="Photo on Unsplash"
+      className="article__img"
+      src="//images.ctfassets.net/abe.jpeg"
+    />
+  </div>
+  <article
+    className="article__content"
+  >
+    <h2
+      className="article__content-title"
+    >
+      Python Concurrency (i)
+    </h2>
+    <p
+      className="article__content-date"
+    >
+      November 22, 2020
+    </p>
+    <Component
+      content={
+        Object {
+          "raw": "{\\"nodeType\\":\\"document\\",\\"data\\":{},\\"content\\":[]}",
+        }
+      }
+    />
+  </article>
+</div>
+`;
+
+exports[`BlogTemplate should render 1`] = `
+<Layout>
+  <SEO
+    noIndex={false}
+  />
+  <Blog
+    author={
+      Object {
+        "name": "elfi",
+      }
+    }
+    body={
+      Object {
+        "raw": "{\\"nodeType\\":\\"document\\",\\"data\\":{},\\"content\\":[]}",
+      }
+    }
+    description={
+      Object {
+        "description": "description",
+      }
+    }
+    heroImage={
+      Object {
+        "file": Object {
+          "url": "//images.ctfassets.net/abe.jpeg",
+        },
+        "title": "Photo on Unsplash",
+      }
+    }
+    key="1234"
+    publishDate="2020-11-22T00:00+00:00"
+    slug="/abv"
+    title="Python Concurrency (i)"
+  />
+  <SocialSharer
+    blogSlug="/abv"
+    blogTitle="Python Concurrency (i)"
+  />
+  <DiscussionEmbed
+    config={
+      Object {
+        "identifier": "/abv",
+        "title": "Python Concurrency (i)",
+      }
+    }
+  />
+</Layout>
+`;

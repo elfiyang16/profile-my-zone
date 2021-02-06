@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Blog /> should render 1`] = `
+<div
+  className="article"
+>
+  <div
+    className="article__img-container"
+  >
+    <img
+      alt="Photo on Unsplash"
+      className="article__img"
+      src="//images.ctfassets.net/abe.jpeg"
+    />
+  </div>
+  <article
+    className="article__content"
+  >
+    <h2
+      className="article__content-title"
+    >
+      Python Concurrency (i)
+    </h2>
+    <p
+      className="article__content-date"
+    >
+      November 22, 2020
+    </p>
+    <Component
+      content={
+        Object {
+          "raw": "{\\"nodeType\\":\\"document\\",\\"data\\":{},\\"content\\":[]}",
+        }
+      }
+    />
+  </article>
+</div>
+`;

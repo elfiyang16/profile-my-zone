@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer /> should render 1`] = `
+<footer
+  className="site-footer"
+>
+  © 
+  2021
+  , built by Elfi with Gatsby under
+   
+  <a
+    href="https://opensource.org/licenses/MIT"
+  >
+    MIT License
+  </a>
+</footer>
+`;
