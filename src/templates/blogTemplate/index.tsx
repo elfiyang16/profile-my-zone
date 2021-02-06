@@ -7,7 +7,8 @@ import Blog from "../../components/blog"
 import "./styles.scss"
 import SocialSharer from "../../components/socialShare"
 import { DiscussionEmbed } from "disqus-react"
-interface IProps {
+
+export interface IProps {
   data: {
     contentfulBlogPost: IBlog
   }
