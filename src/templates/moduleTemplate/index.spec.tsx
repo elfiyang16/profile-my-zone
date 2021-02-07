@@ -40,7 +40,7 @@ describe("Main", () => {
               "@context": "http://schema.org",
               "itemListElement": [
                 {
-                  "item": { "@id": "https://elfiy.com", "name": "Home" },
+                  "item": { "@id": "http://elfiy.com", "name": "Home" },
                   "@type": "ListItem",
                   "position": 1
                 }

@@ -13,7 +13,7 @@ exports[`SocialSharer should match the latest snapshot 1`] = `
      
     <a
       className="social-share__link"
-      href="https://twitter.com/intent/tweet/?text=mockPost&url=https%3A%2F%2Flocalhost%3A8000%2Fblog%2F%2FmockPost&via=elfi"
+      href="https://twitter.com/intent/tweet/?text=mockPost&url=false&via=elfi"
       rel="nofollow"
       target="_blank"
       title="Share on Twitter"

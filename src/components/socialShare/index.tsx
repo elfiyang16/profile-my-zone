@@ -35,7 +35,10 @@ const SocialSharer: FunctionComponent<IProps> = ({ blogTitle, blogSlug }) => {
 export function getTwitterUrl(blogTitle: string, blogSlug: string) {
   const base = "https://twitter.com/intent/tweet"
   const title = encodeURIComponent(blogTitle)
-  const url = encodeURIComponent(`https://localhost:8000/blog/${blogSlug}`)
+  const url = encodeURIComponent(
+    `${process.env.NODE_ENV}` === "production" &&
+      `http://elfiy/blog/${blogSlug}`
+  )
 
   return `${base}/?text=${title}&url=${url}&via=elfi`
 }
