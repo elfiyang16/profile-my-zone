@@ -1,14 +1,8 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">This is my blog place</h1>
+<h1 align="center">Dev Zone Blog</h1>
 
-[Gatsby blog site](https://www.elfiy.com/) with Typescript, Jest, ESlint and other useful configurations.
+[Personal profile site](https://www.elfiy.com/) with Typescript, Jest, ESlint and other useful configurations.
 
-It is used as an archive for my blogs published on [Medium](https://elfi-y.medium.com/) (there're not many of them yet as I haven't had an API up and running to migrate the content easily).
+It is used as an archive for my blogs published on [Medium](https://elfi-y.medium.com/) (there are 100+ on medium now but I haven't had an API up and running to migrate the content easily to here).
 
 It use _Contentful_ CMS and tested with Enzyme and Jest. It uses Github Actions to run the CI and CD pipeline to deploy to Netlify.
 

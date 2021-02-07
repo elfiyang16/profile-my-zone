@@ -94,12 +94,18 @@ const IndexPage = ({ data }: any) => {
         <div className="about__container">
           <img className="about__img" src={profile} />
           <p className="about__text">
-            &nbsp; &nbsp;Elfi is a Fullstack engineer on JavaScript and Python.
-            She always thought language was her thing and studied German
-            Literature at the uni. But now she works on machine languages. Well,
-            they are all languages.
+            &nbsp; &nbsp;Hi, I'm Elfi, a Fullstack engineer on JavaScript and
+            Python. I always thought language was my thing and studied German
+            Literature at the uni. But now I works on machine languages. Well,
+            they are all languages in the end.
             <br />
-            &nbsp; &nbsp;When not coding, She loves to experiment new spices and
+            &nbsp; &nbsp;I regularly share and publish blogs on{" "}
+            <strong>
+              <a href="https://elfi-y.medium.com/">Medium</a>
+            </strong>{" "}
+            so you are welcome to check the content there :).
+            <br />
+            &nbsp; &nbsp;When not coding, I love to experiment new spices and
             invent fusion recipes like Thai green curry risotto, spicy Sichuan
             burger, pesto roasted tofu, etc.
           </p>
