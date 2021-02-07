@@ -7,6 +7,17 @@ export interface IProps {
   blogSlug: string
 }
 
+export function getTwitterUrl(blogTitle: string, blogSlug: string) {
+  const base = "https://twitter.com/intent/tweet"
+  const title = encodeURIComponent(blogTitle)
+  const url = encodeURIComponent(
+    `${process.env.NODE_ENV}` === "production" &&
+      `http://elfiy/blog/${blogSlug}`
+  )
+
+  return `${base}/?text=${title}&url=${url}&via=elfi`
+}
+
 const SocialSharer: FunctionComponent<IProps> = ({ blogTitle, blogSlug }) => {
   const twitterUrl = getTwitterUrl(blogTitle, blogSlug)
 
@@ -17,7 +28,7 @@ const SocialSharer: FunctionComponent<IProps> = ({ blogTitle, blogSlug }) => {
       aria-label="Social sharing button"
     >
       <p className="social-share_wrapper">
-        Share on:{" "}
+        Share on: {/* eslint-disable-next-line react/jsx-no-target-blank */}
         <a
           className="social-share__link"
           href={twitterUrl}
@@ -30,17 +41,6 @@ const SocialSharer: FunctionComponent<IProps> = ({ blogTitle, blogSlug }) => {
       </p>
     </div>
   )
-}
-
-export function getTwitterUrl(blogTitle: string, blogSlug: string) {
-  const base = "https://twitter.com/intent/tweet"
-  const title = encodeURIComponent(blogTitle)
-  const url = encodeURIComponent(
-    `${process.env.NODE_ENV}` === "production" &&
-      `http://elfiy/blog/${blogSlug}`
-  )
-
-  return `${base}/?text=${title}&url=${url}&via=elfi`
 }
 
 export default SocialSharer

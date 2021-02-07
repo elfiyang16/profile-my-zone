@@ -4,7 +4,6 @@ import "./styles.scss"
 import dog from "../../images/dog-white.svg"
 import burgermenu from "../../images/menu-white.svg"
 import closeicon from "../../images/close-icon.png"
-import { set } from "lodash"
 
 export interface IHeader {
   header: string
@@ -46,7 +45,7 @@ const Header: React.FunctionComponent<IHeader> = ({ header }) => {
           <nav
             className="site-header__responsive-menu-bar"
             tabIndex={0}
-            onClick={(e: any) => setMenu(!menu)}
+            onClick={() => setMenu(!menu)}
           >
             <button>
               <img

@@ -31,6 +31,7 @@ export const BlogList: FunctionComponent<IProps> = ({ data, pageContext }) => {
   const posts = data.allContentfulBlogPost.edges
 
   const { currentPage } = pageContext
+  /* eslint-disable-next-line  @typescript-eslint/no-unused-vars */
   const url = `/blog${currentPage > 1 ? `/page-${currentPage}` : ""}`
 
   return (

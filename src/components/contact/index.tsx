@@ -8,7 +8,6 @@ enum State {
 
 const Contact: React.FunctionComponent = () => {
   const [status, setStatus] = useState<State | undefined>(undefined)
-  console.log(status)
 
   const submitForm = (ev: any) => {
     ev.preventDefault()

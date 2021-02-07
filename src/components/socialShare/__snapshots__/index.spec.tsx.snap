@@ -9,8 +9,7 @@ exports[`SocialSharer should match the latest snapshot 1`] = `
   <p
     className="social-share_wrapper"
   >
-    Share on:
-     
+    Share on: 
     <a
       className="social-share__link"
       href="https://twitter.com/intent/tweet/?text=mockPost&url=false&via=elfi"

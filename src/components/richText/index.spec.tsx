@@ -2,7 +2,6 @@ import { BLOCKS } from "@contentful/rich-text-types"
 import { shallow } from "enzyme"
 import React from "react"
 import { IProps, RichText } from "."
-import { IContentfulRichText } from "../../types/IContentfulRichText"
 
 describe("<RichText />", () => {
   const mockRichText: any = {

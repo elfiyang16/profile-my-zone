@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import { BLOCKS, MARKS } from "@contentful/rich-text-types"
 import React, { ReactNode, useEffect, useState } from "react"
 import { renderRichText } from "gatsby-source-contentful/rich-text"

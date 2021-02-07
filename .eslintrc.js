@@ -31,6 +31,9 @@ module.exports = {
     "@typescript-eslint/explicit-function-return-type": 0,
     "no-nested-ternary": 1,
     "max-len": [1, { code: 150 }],
+    "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/interface-name-prefix": 0,
+    "react/no-unescaped-entities": 0,
   },
   overrides: [
     // Override some TypeScript rules just for .js files

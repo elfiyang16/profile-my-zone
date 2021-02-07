@@ -19,7 +19,7 @@ const Layout: FunctionComponent<LayoutProps> = ({ children }) => (
         }
       }
     `}
-    render={data => (
+    render={() => (
       <>
         <Header header={"home"} />
         <div>

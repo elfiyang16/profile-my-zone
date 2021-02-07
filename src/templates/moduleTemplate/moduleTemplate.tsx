@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { FunctionComponent } from "react"
 import Hero from "../../components/hero"
 import Blog from "../../components/blog"
@@ -39,12 +40,9 @@ interface IProps {
   }
 }
 
-export const componentByTypeName = (
-  typename: string,
-  props: IBlog,
-  idx: number
-) => {
+export const componentByTypeName = (typename: string, props: IBlog) => {
   const modules: any = {
+    /* eslint-disable-next-line react/display-name  */
     ContentfulBlogPost: ({
       id,
       author,
@@ -76,9 +74,9 @@ export const Main: FunctionComponent<IProps> = ({ data }) => {
     hero,
     blogs,
     structuredData,
-    pageTitle,
-    urlPath,
-    noIndex,
+    // pageTitle,
+    // urlPath,
+    // noIndex,
   } = data.contentfulModuleTemplate
 
   return (
@@ -90,16 +88,16 @@ export const Main: FunctionComponent<IProps> = ({ data }) => {
         )}
       {hero && <Hero {...hero} />}
       {Array.isArray(blogs) &&
-        blogs.map((m, idx) => {
+        blogs.map(m => {
           const { __typename, ...props } = m
-          return componentByTypeName(__typename, props, idx)
+          return componentByTypeName(__typename, props)
         })}
     </div>
   )
 }
 
 const ModuleTemplate: FunctionComponent<IProps> = ({ data }) => {
-  const { hero, urlPath, pageTitle, noIndex } = data.contentfulModuleTemplate
+  const { urlPath, pageTitle, noIndex } = data.contentfulModuleTemplate
 
   return (
     <Layout>
