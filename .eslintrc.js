@@ -7,7 +7,6 @@ module.exports = {
     "prettier/@typescript-eslint",
     "plugin:prettier/recommended",
   ],
-  ignorePatterns: ["public/", "jest.config.js", "static/"],
   settings: {
     react: {
       version: "detect",
