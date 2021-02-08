@@ -38,13 +38,13 @@ const richTextOption: ReactNode = {
       <h6 className="rich-text-element">{children}</h6>
     ),
     [BLOCKS.UL_LIST]: (_: unknown, children: ReactNode) => (
-      <ul className="rich-text-element">{children}</ul>
+      <ul className="rich-text-element list-item">{children}</ul>
     ),
     [BLOCKS.OL_LIST]: (_: unknown, children: ReactNode) => (
-      <ol className="rich-text-element">{children}</ol>
+      <ol className="rich-text-element list-item">{children}</ol>
     ),
     [BLOCKS.LIST_ITEM]: (_: unknown, children: ReactNode) => (
-      <li className="rich-text-element">{children}</li>
+      <li className="rich-text-element list-item">{children}</li>
     ),
     [BLOCKS.QUOTE]: (_: unknown, children: ReactNode) => (
       /* add render for quote */
