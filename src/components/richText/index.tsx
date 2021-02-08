@@ -63,9 +63,7 @@ const richTextOption: ReactNode = {
     },
   },
   renderMark: {
-    [MARKS.BOLD]: (text: string) => {
-      ;<strong>{text}</strong>
-    },
+    [MARKS.BOLD]: (text: string) => <strong>{text}</strong>,
     [MARKS.CODE]: (text: string) => <code className="red">{text}</code>,
   },
   renderText: (text: string) =>
