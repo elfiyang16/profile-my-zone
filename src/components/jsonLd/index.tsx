@@ -28,7 +28,7 @@ export function createBlogJsonLd(post: IBlog): BlogPosting {
     image: post.heroImage ? post.heroImage.file.url : undefined,
     mainEntityOfPage:
       `${process.env.NODE_ENV}` === "production" &&
-      `http://elfiy/blog/${post.slug}`,
+      `https://elfiy/blog/${post.slug}`,
   }
 }
 

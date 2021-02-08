@@ -37,10 +37,10 @@ describe("Main", () => {
           internal: {
             content: `{
               "@type": "Blog",
-              "@context": "http://schema.org",
+              "@context": "https://schema.org",
               "itemListElement": [
                 {
-                  "item": { "@id": "http://elfiy.com", "name": "Home" },
+                  "item": { "@id": "https://elfiy.com", "name": "Home" },
                   "@type": "ListItem",
                   "position": 1
                 }
