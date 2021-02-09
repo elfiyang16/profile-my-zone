@@ -7,12 +7,18 @@
 
   &__img-container {
     text-align: center;
+    display: flex;
+    flex-direction: column;
   }
 
   &__img {
     margin-right: auto;
     margin-left: auto;
     width: 80%;
+    margin-bottom: 0;
+  }
+  &__img-title {
+    margin-bottom: $elfi-space-32;
   }
 
   &__content {

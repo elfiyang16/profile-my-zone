@@ -15,6 +15,7 @@ const Blog: FunctionComponent<IBlog> = data => {
           src={heroImage.file.url}
           alt={heroImage.title}
         />
+        <small className="article__img-title">{heroImage.title}</small>
       </div>
       <article className="article__content">
         <h2 className="article__content-title">{title}</h2>

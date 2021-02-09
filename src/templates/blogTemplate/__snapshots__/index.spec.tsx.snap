@@ -12,6 +12,11 @@ exports[`<Blog /> should render 1`] = `
       className="article__img"
       src="//images.ctfassets.net/abe.jpeg"
     />
+    <small
+      className="article__img-title"
+    >
+      Photo on Unsplash
+    </small>
   </div>
   <article
     className="article__content"
