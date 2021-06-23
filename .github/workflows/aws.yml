@@ -1,0 +1,47 @@
+name: Static Website Deployment
+on:
+  push:
+    branches: [ master ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "12"
+
+      - run: npm install
+        name: Install dependencies
+
+      - run: npm run test
+        name: Run test and lint
+
+      - name: Build Website
+        run: npm run build
+        env:
+          NODE_ENV: production
+          ENVIRONMENT: ${{ contains(github.ref, 'master') && 'production' || 'staging'}}
+          DELIVERY_ACCESS_TOKEN: ${{ secrets.DELIVERY_ACCESS_TOKEN }}
+          SPACE_ID: ${{ secrets.SPACE_ID }}
+          GATSBY_DISQUS_NAME: ${{ secrets.GATSBY_DISQUS_NAME }}
+          GATSBY_ENDPOINT: ${{ secrets.GATSBY_ENDPOINT }}
+          GATSBY_FORM_ENDPOINT: ${{ secrets.GATSBY_FORM_ENDPOINT }}
+
+      - name: Configure AWS credentials
+        if: github.event_name == 'push'
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}   
+
+      - name: Deploy to S3
+        if: github.event_name == 'push'
+        run: aws s3 sync public s3://www.${{ secrets.AWS_BUCKET_NAME }} --delete  
+
+      - name: Invalidate Cloudfront
+        if: github.event_name == 'push'
+        #  the one linked to the www.bucket:
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*" 
