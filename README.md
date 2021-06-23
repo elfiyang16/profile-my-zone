@@ -1,6 +1,10 @@
 <h1 align="center">Dev Zone Blog</h1>
 
-[Personal profile site](https://www.elfiy.com/) with Typescript, Jest, ESlint and other useful configurations.
+[Personal profile site](https://www.elfi-y.com/) with Typescript, Jest, ESlint and other useful configurations.
+
+
+#### UPDATE: Jul/21 -- deployed on AWS with Terraform
+
 
 It is used as an archive for my blogs published on [Medium](https://elfi-y.medium.com/) (there are 100+ on medium now but I haven't had an API up and running to migrate the content easily to here).
 
