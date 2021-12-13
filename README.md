@@ -2,10 +2,6 @@
 
 [Personal profile site](https://www.elfi-y.com/) with Typescript, Jest, ESlint and other useful configurations.
 
-
-### UPDATE: Jul/21 -- deployed on AWS with Terraform
-
-
 It is used as an archive for my blogs published on [Medium](https://elfi-y.medium.com/) (there are 100+ on medium now but I haven't had an API up and running to migrate the content easily to here).
 
 It use _Contentful_ CMS and tested with Enzyme and Jest, and deployed to AWS S3.
@@ -121,3 +117,5 @@ Files in both `pages` and `templates` will be compiled into top level sites.
 The project is deployed to AWS and distributed through Cloudfront to get best user experience.
 
 Terraform is used and a local TF backend is maintained.
+
+Upon pushing to Github, a CI/CD pipeline will run as described in `/.github/workflows/aws.yml` using the credentials from the cloud to pull the latest content from Contentful, build the static asset, deploy to S3 and invalidate cloudfront.
