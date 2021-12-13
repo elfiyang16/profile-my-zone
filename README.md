@@ -4,9 +4,11 @@
 
 It is used as an archive for my blogs published on [Medium](https://elfi-y.medium.com/) (there are 100+ on medium now but I haven't had an API up and running to migrate the content easily to here).
 
-It use _Contentful_ CMS and tested with Enzyme and Jest. It uses Github Actions to run the CI and CD pipeline to deploy to Netlify.
+It use _Contentful_ CMS and tested with Enzyme and Jest, and deployed to AWS S3.
 
-## Features
+![static-website](https://user-images.githubusercontent.com/29664811/145848489-fe212608-8efc-470f-8a14-f8a6612fc259.png)
+
+### Features
 
 - Pagination
 - SEO componenet
@@ -17,14 +19,14 @@ It use _Contentful_ CMS and tested with Enzyme and Jest. It uses Github Actions 
 - Disqus forum
 - Social share
 
-## Prerequisites
+### Prerequisites
 
 - Install these extensions:
   - [EditorConfig](https://editorconfig.org/)
   - [Prettier](https://prettier.io/)
   - [ESLint](https://eslint.org/)
 
-## Getting Started
+### Getting Started
 
 1.  **Install.**
 
@@ -69,7 +71,7 @@ After clone the site, run:
     This will build the production build. And with `git push` on `master` branch,  
     the change will deployed to Netlify automatically with `Github Actions`.
 
-## Project Structure
+### Project Structure
 
 A quick look at the top-level files and directories:
 
@@ -78,6 +80,7 @@ A quick look at the top-level files and directories:
     ├── .github
     ├── node_modules
     ├── src
+    |-- infrastructure
     ├── .env.example
     ├── .editorconfig
     ├── .eslintrc.js
@@ -108,3 +111,9 @@ Inside the `src`:
     ├── tsconfig.json
 
 Files in both `pages` and `templates` will be compiled into top level sites.
+
+### Deployment
+
+The project is deployed to AWS and distributed through Cloudfront to get best user experience.
+
+Terraform is used and a local TF backend is maintained.
