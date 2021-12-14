@@ -118,4 +118,4 @@ The project is deployed to AWS and distributed through Cloudfront to get best us
 
 Terraform is used and a local TF backend is maintained.
 
-Upon pushing to Github, a CI/CD pipeline will run as described in `/.github/workflows/aws.yml` using the credentials from the cloud to pull the latest content from Contentful, build the static asset, deploy to S3 and invalidate cloudfront.
+Upon pushing to Github, a Github actions pipeline will run as described in `/.github/workflows/aws.yml` using the credentials from the cloud to pull the latest content from Contentful, build the static asset, deploy to S3 and invalidate cloudfront.
